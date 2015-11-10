@@ -65,7 +65,6 @@ public class PostAdapter extends ArrayAdapter {
                 }
         );
         // Añadir petición a la cola
-        //requestQueue.add(jsArrayRequest);
         MySocialMediaSingleton.getInstance(getContext()).addToRequestQueue(jsArrayRequest);
     }
 
@@ -102,8 +101,6 @@ public class PostAdapter extends ArrayAdapter {
         final com.android.volley.toolbox.NetworkImageView imagenPost = (com.android.volley.toolbox.NetworkImageView) listItemView.
                 findViewById(R.id.imagenPost);
 
-        /*final ImageView imagenPost = (ImageView) listItemView.
-                findViewById(R.id.imagenPost);*/
 
         // Actualizar los Views
         textoTitulo.setText(item.getTitulo());
