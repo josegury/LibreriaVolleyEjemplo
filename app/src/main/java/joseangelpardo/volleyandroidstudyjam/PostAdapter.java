@@ -109,29 +109,11 @@ public class PostAdapter extends ArrayAdapter {
         textoTitulo.setText(item.getTitulo());
         textoDescripcion.setText(item.getDescripcion());
 
-        // Petición para obtener la imagen
-        /*ImageRequest request = new ImageRequest(
-                URL_BASE + item.getImagen(),
-                new Response.Listener<Bitmap>() {
-                    @Override
-                    public void onResponse(Bitmap bitmap) {
-                        imagenPost.setImageBitmap(bitmap);
-                    }
-                }, 0, 0, null,null,
-                new Response.ErrorListener() {
-                    public void onErrorResponse(VolleyError error) {
-                        imagenPost.setImageResource(R.drawable.error);
-                        Log.d(TAG, "Error en respuesta Bitmap: "+ error.getMessage());
-                    }
-                });
-
-        // Añadir petición a la cola
-        requestQueue.add(request);*/
+        
         // Obtener el image loader
         ImageLoader imageLoader= MySocialMediaSingleton.getInstance(getContext()).getImageLoader();
 // Petición
-        //imageLoader.get(URL_BASE + item.getImagen(), ImageLoader.getImageListener(imagenPost,
-         //       R.drawable.loading, R.drawable.error));
+        
         imagenPost.setImageUrl(URL_BASE +item.getImagen(), imageLoader);
 
         // Procesar item
